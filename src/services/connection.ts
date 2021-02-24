@@ -1,12 +1,15 @@
 import axios from 'axios';
 
+
+const _URL = "https://wiserservertest.herokuapp.com/"
+
 const restConnection = {
     test: () => {
-        return axios.get("http://127.0.0.1:5000/")
+        return axios.get(_URL)
     },
 
     login: async (email: any,senha: any) => {
-        return axios.post("http://127.0.0.1:5000/login", { email: email, senha: senha });
+        return axios.post(_URL+"login", { email: email, senha: senha });
     }
 }
 export default restConnection
